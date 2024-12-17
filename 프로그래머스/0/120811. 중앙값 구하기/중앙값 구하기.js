@@ -1,12 +1,10 @@
 function solution(array) {
-    var answer = 0;
     
-   
-    const p = array.sort((a, b) => a - b)
+    let mideum = array.sort(function (a,b) {
+                            return a - b
+                            })
     
-    const l =  Math.floor(p.length/2)
+    let answer = Math.floor(mideum.length / 2)
     
-    const q = p[l]
-    
-    return q;
+    return array[answer];
 }
