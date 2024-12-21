@@ -1,10 +1,9 @@
 function solution(array) {
     
-    let mideum = array.sort(function (a,b) {
-                            return a - b
-                            })
+
+    array.sort((a, b) => a - b);
     
-    let answer = Math.floor(mideum.length / 2)
+    let answer = Math.floor(array.length / 2)
     
     return array[answer];
 }
