@@ -1,17 +1,26 @@
 function solution(array) {
-    const a = array
+    // sort를 써서 정렬하자
+    var a = array.sort((a,b) => a - b)
     
-    const b = a.sort((a,b) => a - b)
+    console.log("a",a)
     
-    const c = Math.floor(b.length / 2)
+    // 배열의 중앙에 있는 요소의 위치를 구하자.
+    var b = Math.floor(a.length/2)
+        
+    console.log("b",b)
     
-    const d = b[c]
-    
-    return d
+    var c = a[b]
+    console.log("c",c)
+    return c;
 }
 
+// 중앙값을 return하네? 그러면 
+// 정수의 배열이 주어지네? 
+// 배열을 일단 정렬해야겠네? 
+// 그러면 뭘 써야하지? sort네?
+// 이때 중앙을 어떻게 구하지? 배열의 중앙에 있는 요소의 자리를 가져오면 되겠다.
 
-// 중앙값? 정렬했을 떄? sort 쓰겠다.
-// 배열이 매개변수로 주어졌네? 그러면 그 배열을 정렬하고 그중에서 가장 가운데 인수를 뽑으면 되겠다
-// 그건 어떻게? 배열의 길이 / 2 
-// 근데 5개면 2.5인데 그걸 반올림 어떻게? 나눌때 반올림 해서 나눠주는 녀석을 쓰자.
+
+// 내 실패점 정렬까지는 알겠다.
+// 배열의 중앙에 있는 요소의 자리를 가져오면 되겠다. 이걸 생각 못했음.
+// 했다하더라도 배열속에서 자리 위치를 어떻게 가져올지 생각 못했음.
