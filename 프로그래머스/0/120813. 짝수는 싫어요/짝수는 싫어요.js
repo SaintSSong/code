@@ -1,7 +1,7 @@
 function solution(n) {
     var a = [];
     
-    for(i=0; i <= n; i++){
+    for(let i = 1; i <= n; i++){
         if(i % 2 !== 0) {
             a.push(i)
         }
@@ -9,7 +9,6 @@ function solution(n) {
     
     return a;
 }
-
 // 배열을 return하네?
 // 홀수를 만드는 조건이 어떻게 될까?
 // k % 2 했는데 나머지가 나오면 홀수잖아.
