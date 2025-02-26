@@ -1,46 +1,45 @@
 function solution(array) {
 
-    let count = {} // 애들 몇번 나왔는지 횟수 새는 객체
-    let maxCount = 0 // 가장 많이 나온 값
-    let mostNumber = null; // 최빈값 저장 변수
-    let multiple = false; 
-
-    array.forEach((num) => {
-        count[num] = (count[num] || 0) + 1;
-    if (count[num] > maxCount) {
-        maxCount = count[num]; // 가장 많이 나온 값
-        mostNumber = num; 
-        multiple = false; 
-    } else if (count[num] === maxCount) { 
-        multiple = true;
+    let count = {} // 최빈값 구하기 위해 담을 객체
+    
+    // 배열의 요소 빈도수를 구하기
+    for (let banana of array) {
+        count[banana] = (count[banana] || 0) + 1
     }
+    console.log("count", count)
+    
+    // 최빈값 구하기
+    // 우선 최빈값을 하나 임의로 정하고 그걸 업데이트하는 방식으로 가야겠다.
+    let maxNumber = -1; // 최빈값을 -1이라고 임의 지정
+    let maxCount = 0; // 최대 빈도수를 우선 0이라고 지정
+    let isMultyple = false; 
+    
+    for (let key in count) {
+        let value = count[key]; // 각 객체 속 빈도수 값을 value에 저장
+        let numberKey = Number(key); // 객체 속 key를 숫자로 변환
+        
+        // 만약 객체 속의 빈도수가 최대 빈도수보다 크다? 
+        // 그러면 업데이트를 해야한다.
+        if (value > maxCount) {
+            maxCount = value;
+            maxNumber = numberKey;
+            isMultyple = false;
+        } else if(value === maxCount) {
+            isMultyple = true;
+        }
+    }
+    
+    return isMultyple ? -1 : maxNumber;
+}
 
-})
-    return multiple ? -1 : mostNumber;}
+// 배열을 매개 변수로 받았다.
+// 이 배열을 하나하나 돌면서 요소들이 몇번 나왔는지 배열의 요소의 빈도수을 구해야겠다.
 
-// 주어진 숫자 중에서 가장 많이 나온 숫자? = 숫자당 몇번 나왔는지 횟수를 새야한다.
-// 배열을 매개변수로 주네? map이랑 그런거 사용가능하겠다.
-// 최빈값이 여러개면 -1을 하라고? 그러면 최빈값이라는 변수가 있어야겠고 그게 여러개인지 알아야겠네?
+// 배열을 하나하나 돌면 for문이겠고 그 중에서 for of를 써야겠네
 
-//   let frequency = {}; // 숫자 등장 횟수를 저장할 공간
-//   let maxFrequency = 0; // 가장 많이 나온 횟수
-//   let mode = null;      // 최빈값을 저장할 변수
-//   let isMultiple = true; // 최빈값이 여러 개인지 확인하는 변수
+// 최빈값 구하는 방법이 어떻게 될까?
+// 우선 최빈값을 하나 임의로 정하고 그걸 업데이트하는 방식으로 가야겠다.
+// 현재 객체에 있는 요소들이 몇번 나왔는지 횟수도 계산해야지 비교가 가능하겠다.
 
-//   // 1️⃣ 각 숫자의 등장 횟수를 세기
-//   array.forEach((num) => {
-//     frequency[num] = (frequency[num] || 0) + 1; // 없으면 0부터 시작해서 1씩 더하기
-      
-    // if (frequency[num] > maxFrequency) {
-    //   maxFrequency = frequency[num]; // 최대 등장 횟수 갱신
-    //   mode = num;        // 최빈값 저장
-    //   isMultiple = false; // 새로운 최빈값이니까 겹치는 게 아니야
-    // } 
-      // else if (frequency[num] === maxFrequency) {
-      // isMultiple = true; // 등장 횟수가 같은 숫자가 나오면 여러 개임
-//     } else if (frequency[num]  < maxFrequency) {
-//     }
-//   });
 
-//   // 2️⃣ 결과 반환
-//   return isMultiple ? -1 : mode;
+
