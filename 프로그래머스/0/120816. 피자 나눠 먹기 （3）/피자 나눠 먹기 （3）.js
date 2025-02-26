@@ -1,6 +1,9 @@
 function solution(slice, n) {
-    var answer = 0;
-    let h = n / slice
-    const b = Math.ceil(h)
-    return b
+    let a = Math.ceil(n / slice)
+    return a;
 }
+// 2 ~ 10조각 원하는 만큼 (slice)
+// 먹는 인원 N 
+// N이 최소 한조각 이상 
+
+
