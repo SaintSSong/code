@@ -1,46 +1,16 @@
 function solution(angle) {
-    if (angle < 90) {
-        answer = 1
-    } else if (angle === 90){
-        answer = 2
-    } else if ( angle < 180){
-        answer = 3
-    } else if (angle === 180) {
-        answer = 4
-    }
-    return answer;
+    let n = angle;
+    console.log(n);
+    
+    if( n > 0 && n < 90) {
+        return 1;
+    } else if( n === 90) {
+        return 2;       
+    } else if( n > 90 && n < 180) {
+        return 3;
+    } else if( n === 180) {
+        return 4;
+    } 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let answer = 0;
-
-//     if(angle < 90){
-//         answer = 1
-//     }
-//     else if(angle === 90){
-//         answer = 2
-//     }
-//     else if(angle < 180){
-//         answer = 3
-//     }
-//     else if(angle === 180){
-//         answer = 4
-//     }
-
-//            return answer;
-//     }    
+// 예각을 조건으로 만들어볼까? 
