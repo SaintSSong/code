@@ -1,28 +1,21 @@
 function solution(hp) {
+    
+    // 몫과 나머지    hp 23
+    let gA = Math.floor(hp / 5); //  4
+    let rA = hp % 5; //  3
+    console.log(rA)
 
-    let generalAnte = Math.floor(hp / 5)
-    console.log("generalAnte", generalAnte)
-    let restGeAnte = hp % 5
-    console.log("restGeAnte", restGeAnte)
+    let sA = Math.floor(rA / 3); // 4 / 3 => 1.3333
+    let rSA = rA % 3; // 1.33333
+console.log(rSA)
     
-    let solAnte =  Math.floor(restGeAnte / 3)
-    console.log("solAnte", solAnte)
-    let restSolAnte = restGeAnte % 3
-    console.log("restSolAnte", restSolAnte)    
+    let wA = Math.floor(rSA / 1);
+    let rWA = rSA % 1;
     
-    let workAnte = Math.floor(restSolAnte / 1)
-    console.log("workAnte", workAnte)    
-    let restWorkAnte = workAnte % 1
-    console.log("restWorkAnte", restWorkAnte)    
-    
-    let answer = (generalAnte + solAnte + workAnte);
-    console.log("answer", answer)
+    let answer = (gA + sA + wA);
     
     return answer;
 }
 
-// hp가 딱 떨어지는 문제라
-// if문? 큰 숫자로 해서 먼저 5로 나누고 나머지를 변수로 두고 
-// 그 변수를 if문으로 돌려버리면 되지 않을까?
-// 조건은 23일때 5로 나누면 나머지면 3 
-// 이때 3을 n으로 두고 나누는거지
+
+// 문제에서 요구하는 바는 최소한의 개미 사용율
