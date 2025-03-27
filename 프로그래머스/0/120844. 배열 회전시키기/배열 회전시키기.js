@@ -1,32 +1,28 @@
 function solution(numbers, direction) {
-    var answer = [];
 
-    
-    if(direction === "right"){
-        // 
-        let a = numbers.slice(-1); //(2, 3)
-        console.log(a) // 3
-        let b = numbers.slice(0, numbers.length-1); //(0, 2)
-        console.log(b) // 1,2
+    if(direction === "left"){
+        // 0번째 인덱스를 뺀 나머지를 반환
+    let a = numbers.slice(1) // 	[ 455, 6, 4, -1, 45, 6 ]
+    console.log("a",a)
+        // 0번째 인덱스를 추출
+    let b = numbers.slice(0,1)
+        console.log("b",b)
+    let c = a.concat(b)
+    return c
         
-        let c = a.concat(b)
-        return c
-        } else {
-            // 가장 왼쪽을 빼야함.
-        let d = numbers.slice(0, 1); 
-        console.log("d",d) 
-            // 2번째 요소부터 끝요소까지 
-        let e = numbers.slice(1, numbers.length);
-        console.log("e",e) // 1,2
+    } else if(direction === "right") {
         
-        let f = e.concat(d)
-        return f
-        }
+    let d = numbers.slice(-1)
     
-    // 원본 배열의 요소의 index에서 한칸씩 밀리게 해야 한다.
-    
-    return answer;
+    let e = numbers.slice(0,numbers.length-1)
+    let f = d.concat(e)
+    return f
+    }
 }
 
-// slice() 다시 공부하기
-// concat() 공부하기 
+// 자르고 붙일까?
+// 자르고? slice
+// 붙일까? join? join은 문자열만 아닌가? 
+// concat()
+// 배열을 반환해야하네?
+
