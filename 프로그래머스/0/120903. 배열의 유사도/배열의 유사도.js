@@ -1,19 +1,11 @@
 function solution(s1, s2) {
-    var answer = 0;
-    let count = 0;
+    let s2Set = new Set(s2);
+    // filter 효능
+    // 1. s1에서 조건에 맞는 녀석들만 남긴다.
+    // .has의 효능 
+    // 1. s2Set에서 el즉 s1의 요소들과 일치하는지 검증한다.
     
-    for (let i = 0; i < s1.length; i++){
-        
-        for(let j = 0; j<s2.length; j++){
-            if(s1[i] === s2[j]){
-                console.log("i",i, "j",j)
-                count ++
-            }
-        }
-    }
-    
-    return count;
+    let a = s1.filter((el) => s2Set.has(el))
+    console.log(a)
+    return a.length;
 }
-
-// for문 속의 for문을 넣어서 if (i === j) 면 count ++ 이렇게 풀어야하나?
-
